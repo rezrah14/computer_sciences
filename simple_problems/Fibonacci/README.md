@@ -24,7 +24,7 @@ def fib_1(n):
 ## 2. Dynamic Programming - memory caching
 In the previous approach, as you can see there are lots of redundant duplicated calculations. Let's store the calculated
 values and use them in the recursive calls. Here, we have used a dictionary data structure (`O(1)` in accessing elements).
-This has huge impact on the performance. Now, it is possible to calculate the terms of Fibonacci series even for very 
+This has huge impact on the performance. Now, it is possible to calculate the terms of Fibonacci sequence even for very 
 large number very fast! However, this speed is not granted for free! we have to memorized lots of values in memory.
 Could we do better and consume less memory without degrading the performance!?
 
@@ -40,9 +40,9 @@ def fib_2(n, memo=None):
 ```
 
 ## 3. Optimal Solution
-The previous approaches are top-bottom approaches. Let's change the calculations to start from bottom and go up until 
-reaching to the `nth` term of Fibonacci series! This way, there is no need to store all calculated values! it is required to
-keep track of only the most two recent values. Besides, this approach allows easily to print the entire series if requested.
+The previous approaches are top-bottom approaches. Let's change the calculations to start from bottom and go higher until 
+reaching the `nth` term of Fibonacci sequence! This way, there is no need to store the calculated values! it is required to
+keep track of only the most two recent values. Besides, this approach allows easily to print the entire sequence if requested.
 
 ```
 def fib_3(n):
@@ -60,3 +60,6 @@ def fib_3(n):
     return c
 ```
 
+<p align="center">
+    <img src="./time.png" width="350" height="300" align="center">
+</p>
