@@ -61,5 +61,5 @@ def fib_3(n):
 ```
 
 <p align="center">
-    <img src="./time.png" width="350" height="300" align="center">
+    <img src="./time.png" width="600" height="600" align="center">
 </p>
