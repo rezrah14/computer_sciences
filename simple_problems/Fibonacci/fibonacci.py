@@ -2,10 +2,10 @@ import time
 import matplotlib.pyplot as plt
 
 
-def fib_1(nn):
+def fib_1(n):
     if nn <= 3:
         return 1
-    f = fib_0(nn - 1) + fib_0(nn - 2)
+    f = fib_1(n - 1) + fib_1(n - 2)
     return f
 
 
@@ -19,15 +19,15 @@ def fib_2(nn, memo=None):
     return f
 
 
-def fib_2(nn):
+def fib_3(n):
     a = 0
     b = 1
-    if nn == 1:
+    if n == 1:
         pass
         #print(a)
     else:
 #
-        for i in range(2, nn):
+        for i in range(2, n):
             c = a + b
             a = b
             b = c

@@ -25,7 +25,8 @@ def fib_1(n):
 In the previous approach, as you can see there are lots of redundant duplicated calculations. Let's store the calculated
 values and use them in the recursive calls. Here, we have used a dictionary data structure (`O(1)` in accessing elements).
 This has huge impact on the performance. Now, it is possible to calculate the terms of Fibonacci series even for very 
-large number very fast!
+large number very fast! However, this speed is not granted for free! we have to memorized lots of values in memory.
+Could we do better and consume less memory without degrading the performance!?
 
 ```
 def fib_2(n, memo=None):
@@ -38,4 +39,24 @@ def fib_2(n, memo=None):
     return f
 ```
 
+## 3. Optimal Solution
+The previous approaches are top-bottom approaches. Let's change the calculations to start from bottom and go up until 
+reaching to the `nth` term of Fibonacci series! This way, there is no need to store all calculated values! it is required to
+keep track of only the most two recent values. Besides, this approach allows easily to print the entire series if requested.
+
+```
+def fib_3(n):
+    a = 0
+    b = 1
+    if n <= 1:
+        pass
+        #print(a)
+    else:
+        for i in range(2, n):
+            c = a + b
+            a = b
+            b = c
+            #print(c)
+    return c
+```
 
