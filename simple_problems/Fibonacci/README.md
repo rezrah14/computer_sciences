@@ -17,8 +17,9 @@ def fib_0(n):
     f = fib_0(n - 1) + fib_0(n - 2)
     return f
 ```
-<img src="./fib_rec.png" width="200" height="200" align="center">
-
+<p align="center">
+    <img src="./fib_rec.png" width="400" height="350" align="center">
+</p>
 
 
 
