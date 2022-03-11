@@ -12,9 +12,9 @@ problem for higher number of terms (`n`) in Fibonacci series!
 
 ```
 def fib_1(n):
-    if n < 2:
-        return n
-    f = fib_0(n - 1) + fib_0(n - 2)
+    if n <= 3:
+        return 1
+    f = fib_1(n - 1) + fib_1(n - 2)
     return f
 ```
 <p align="center">
@@ -31,7 +31,7 @@ Could we do better and consume less memory without degrading the performance!?
 ```
 def fib_2(n, memo=None):
     if memo is None:
-        memo = {0: 0, 1: 1, 2:1}
+        memo = {1: 0, 2: 1, 3: 1}
     if n in memo:
         return memo[n]
     f = fib_2(n - 1, memo) + fib_2(n - 2, memo)
@@ -48,18 +48,19 @@ keep track of only the most two recent values. Besides, this approach allows eas
 def fib_3(n):
     a = 0
     b = 1
-    if n <= 1:
+    # print(0)
+    # print(1)
+    if n == 1:
         pass
-        #print(a)
     else:
         for i in range(2, n):
             c = a + b
             a = b
             b = c
-            #print(c)
+            # print(c)
     return c
 ```
 
 <p align="center">
-    <img src="./time.png" width="600" height="400" align="center">
+    <img src="./time.png" width="700" height="500" align="center">
 </p>

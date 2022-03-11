@@ -1,5 +1,6 @@
 import time
 import matplotlib.pyplot as plt
+from memory_profiler import memory_usage
 
 
 def fib_1(n):
@@ -52,6 +53,8 @@ if __name__ == "__main__":
         fib_n = fib_3(num)
         end = time.time()
         res[2].append((num, (end - start) * 1000))
+
+        mem_usage = memory_usage(fib_3(10))
 
     x_vals = [num for num in range(10, 35)]
     y_vals = [item[1] for item in res[0]]
