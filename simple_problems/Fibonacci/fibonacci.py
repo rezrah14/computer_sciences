@@ -2,14 +2,14 @@ import time
 import matplotlib.pyplot as plt
 
 
-def fib_0(nn):
+def fib_1(nn):
     if nn <= 3:
         return 1
     f = fib_0(nn - 1) + fib_0(nn - 2)
     return f
 
 
-def fib_1(nn, memo=None):
+def fib_2(nn, memo=None):
     if memo is None:
         memo = {1: 0, 2: 1}
     if nn in memo:
